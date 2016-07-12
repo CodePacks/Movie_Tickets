@@ -13,11 +13,11 @@ $tickets=$_SESSION['tickets'];
 // }
 
 
-echo "Hello, <b>".$user_name."</b> view profile:";
+echo "<center><font color='#2DC88B'>Hello, <b>".$user_name."</b> view profile:";
 echo form_open('form/edit_first');
 echo "<p>First name - ".$first_name." ";
 echo "<input type='hidden' name='first_name' value='$first_name'>";
-echo "<input type='submit' name='submit' value='edit'>";
+echo "<input class='btn btn-primary' type='submit' name='submit' value='edit'>";
 echo form_close();
 echo "</p>";
 
@@ -26,19 +26,19 @@ echo "<p>Phone Number - ".$phone." ";
 
 
 echo "<input type='hidden' name='phone' value='$phone'>";
-echo "<input type='submit' name='submit' value='edit'>";
+echo "<input class='btn btn-primary' type='submit' name='submit' value='edit'>";
 echo form_close();
 echo "</p>";
 echo form_open('form/buy_tickets');
-echo "<p><pre>You'r tickets =  $tickets"." ";
+echo "<p>You'r tickets =  $tickets"." ";
 echo "<input type='hidden' name='phone' value='$tickets'>";
-echo "<input type='submit' name='submit' value='BUY'>";
+echo "<input class='btn btn-primary' type='submit' name='submit' value='BUY'>";
 echo form_close();
-echo "</pre></p>";
+echo "</p>";
 echo "<p>Your Profile Picture : </p>";
-echo '<img height="200" width="250" src="data:image/jpeg;base64,'.base64_encode( $photo ).'"/>';
+echo '<img height="200" width="250" src="data:image/jpeg;base64,'.base64_encode( $photo ).'"/></font>';
 
-echo "<p>".anchor('form/logout', 'LOGOUT')."</p>";
+echo "<p>".anchor('form/logout', 'LOGOUT')."</p></center>";
 
 
 

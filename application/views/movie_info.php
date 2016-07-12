@@ -10,6 +10,7 @@ foreach ($movie_info as $key => $movies) {
 
 $warcraft='Warcraft';
 $deadpool='Deadpool';
+$option_movie=$movies['movie_name'];
 
 // echo $movies['movie_name'];
 
@@ -26,5 +27,14 @@ echo '<center><iframe width="560" height="315" src="https://www.youtube.com/embe
 	echo "<br><center><p><font color='green'><i>".$movies['movie_info']."</i></font></p></center>";
 	echo "<p><center><font color='#00e6e6'>Free seats for this movie : ".$movies['free_seats']."</font></p>";
 	echo "<p><font color='#00e6e6'>SOLD seats for this movie : ".$movies['taken_seats']."</font></p></div></center>";
+	if ($movies['free_seats'] > 0) {
+		echo "<center>".form_open();
+		echo "<input type='hidden' name='movie_name' value='$option_movie'>";
+		echo "<p><input type='number' name='buy' placeholder='number of tickets to buy'></p>";
+		echo "<input type='submit' name='submit' class='btn btn-info' value='BUY TICKETS FOR THIS MOVIE'></center>";
+		echo form_close();
+	}else{
+		echo "<center><button class='btn btn-danger'>NO TICKETS LEFT !</button></center>";
+	}
 	
 }

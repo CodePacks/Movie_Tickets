@@ -3,7 +3,7 @@
 <head>
 	<title>Created by Toni and Svetli</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />.
+	<link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" media="all" />.
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -24,13 +24,15 @@
 <div id="shell">
 	<!-- Header -->
 	<div id="header">
-		<h1 id="logo"><a href="#">Movie Hunter</a></h1>
+		<h1 id="logo"><a href="buy_tickets">Movie Hunter</a></h1>
 		<div class="social">
 			<span>FOLLOW US ON:</span>
 			<ul>
 			    <li><a class="twitter" href="#">twitter</a></li>
-			    <li><a class="facebook" href="#">facebook</a></li>
-			    <li><a class="vimeo" href="#">vimeo</a></li>
+			    <li><a class="facebook" href="https://www.facebook.com/svetoslav.vasilev.16">facebook Svetli</a></li>
+			    <li><a class="facebook" href="https://www.facebook.com/profile.php?id=100002380794186">facebook Toni</a></li>
+
+			   <!--  <li><a class="vimeo" href="#">vimeo</a></li> -->
 			    <li><a class="rss" href="#">rss</a></li>
 			</ul>
 		</div>
@@ -38,7 +40,7 @@
 		<div id="navigation">
 			<ul>
 			    <li><a class="active" href="<?php echo base_url()?>index.php/form/buy_tickets">HOME</a></li>
-			    <li><a href="#">NEWS</a></li>
+			    <li><a href="<?php echo base_url()?>index.php/form/form_view">LOGIN</a></li>
 			    <li><a href="#">IN THEATERS</a></li>
 			    <li><a href="#">COMING SOON</a></li>
 			    <li><a href="#">CONTACT</a></li>
@@ -48,6 +50,17 @@
 		<!-- end Navigation -->
 		<!-- Sub-menu -->
 		<div id="sub-navigation">
+			<?php 
+			if (!empty($_SESSION['username'])) {
+				echo "<b><font color='#2DC88B'>Hello"."<b><font size='4'> ".$_SESSION['username']."</b></font> ";
+echo "<a href='first'>Edit Profile</a>";
+echo "<p>First name - ".$_SESSION['first_name']."</p>";
+echo "Tickets - ".$_SESSION['tickets']."</font></b>";
+echo "<p>".anchor('form/logout', 'LOGOUT')."</p>";
+			}else{
+				echo "<font color='#FF0101'>WELLCOME GUEST !!!</font>";
+			}
+			?>
 			<!-- <ul>
 			    <li><a href="#">SHOW ALL</a></li>
 			    <li><a href="#">LATEST TRAILERS</a></li>
