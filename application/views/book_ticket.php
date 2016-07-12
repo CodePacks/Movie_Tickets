@@ -17,9 +17,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //for-mobile-apps -->
 <link href='//fonts.googleapis.com/css?family=Kotta+One' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<link href="<?php echo base_url() ?>css/tickets-style.css" rel="stylesheet" type="text/css" media="all" />
-<script src="<?php echo base_url() ?>js/jquery-1.11.0.min.js"></script>
-<script src="<?php echo base_url() ?>js/jquery.seat-charts.js"></script>
+<link href="../../css/tickets-style.css" rel="stylesheet" type="text/css" media="all" />
+<script src="../../js/jquery-1.11.0.min.js"></script>
+<script src="../../js/jquery.seat-charts.js"></script>
 </head>
 <body>
 <div class="content">
@@ -31,18 +31,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="front">SCREEN</div>					
 			</div>
 			<div class="booking-details">
+
 				<ul class="book-left">
-					<?php foreach ($movie as $key => $value){
-					
-					?>
-					<li><?php $value['movie_name'] ?> </li>
+					<li>Movie </li>
 					<li>Time </li>
 					<li>Tickets</li>
 					<li>Total</li>
 					<li>Seats :</li>
 				</ul>
+				<?php foreach ($tickets as $key => $value){
+				?>
 				<ul class="book-right">
-					<li>: Gingerclown</li>
+					<li>: <?php echo $value['movie_name']; } ?></li>
 					<li>: April 3, 21:00</li>
 					<li>: <span id="counter">0</span></li>
 					<li>: <b><i>$</i><span id="total">0</span></b></li>
@@ -68,14 +68,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						map: [  //Seating chart
 							'aaaaaaaaaa',
 							'aaaaaaaaaa',
-							'__________',
-							'aaaaaaaa__',
 							'aaaaaaaaaa',
 							'aaaaaaaaaa',
 							'aaaaaaaaaa',
 							'aaaaaaaaaa',
 							'aaaaaaaaaa',
-							'__aaaaaa__'
+							'aaaaaaaaaa',
+							'aaaaaaaaaa',
+							'aaaaaaaaaa'
 						],
 						naming : {
 							top : false,
@@ -136,7 +136,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<p class="copy_rights">&copy; 2016 Movie Ticket Booking Widget. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank"> W3layouts</a></p>
 </div>
-<script src="<?php echo base_url() ?>js/jquery.nicescroll.js"></script>
-<script src="<?php echo base_url() ?>js/scripts.js"></script>
+<script src="../../js/jquery.nicescroll.js"></script>
+<script src="../../js/scripts.js"></script>
 </body>
 </html>

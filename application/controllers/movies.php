@@ -11,7 +11,7 @@ Class Movies extends CI_Controller{
 	public function book_ticket()
 	{
 		$id = $this->uri->segment(3);
-		$data['all_resources'] = $this->movie_model->book_ticket($id);
+		$data['tickets'] = $this->movie_model->book_ticket($id);
 		$this->load->view('book_ticket', $data);
 	}
 	public function view_all_movies(){
