@@ -40,7 +40,15 @@
 		<div id="navigation">
 			<ul>
 			    <li><a class="active" href="<?php echo base_url()?>index.php/form/buy_tickets">HOME</a></li>
-			    <li><a href="<?php echo base_url()?>index.php/form/form_view">LOGIN</a></li>
+			    <?php
+			    if (empty($_SESSION['username'])) {
+			    	
+			    
+			    echo '<li><a href="http://localhost/movie_tickets/index.php/form/form_view">LOGIN</a></li>';
+			}else{
+				echo '<li><a href="http://localhost/movie_tickets/index.php/form/first">MY PROFILE</a></li>';
+			}
+			?>
 			    <li><a href="#">IN THEATERS</a></li>
 			    <li><a href="#">COMING SOON</a></li>
 			    <li><a href="#">CONTACT</a></li>
@@ -53,7 +61,7 @@
 			<?php 
 			if (!empty($_SESSION['username'])) {
 				echo "<b><font color='#2DC88B'>Hello"."<b><font size='4'> ".$_SESSION['username']."</b></font> ";
-echo "<a href='first'>Edit Profile</a>";
+echo "<a href='http://localhost/movie_tickets/index.php/form/first'>Edit Profile</a>";
 echo "<p>First name - ".$_SESSION['first_name']."</p>";
 echo "Tickets - ".$_SESSION['tickets']."</font></b>";
 echo "<p>".anchor('form/logout', 'LOGOUT')."</p>";
